@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+
+
+<div class="container">
+
+    <h1>Product Information</h1>
+  
+
+    <label><h5>Device Name</h5></label> : {{ product.device_name }} <br>
+    <label><h5>Path Number</h5></label> : {{ product.path_number }} <br>
+    <label><h5>Serial Number</h5></label> : {{ product.serial_number }} <br>
+    <label><h5>Device Type</h5></label> : {{ product.device_type }} <br>
+    <label><h5>Location</h5></label> : {{ product.location }} <br>
+    <label><h5>Status</h5></label> : {{ product.status }} <br>
+</div>
+
+<div class="container">
+    
+    <div class="btn-group">
+        <a href="{% url 'edit' product.id %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Edit Product</a> 
+        <a href="{% url 'home' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>  
+    </div>
+  
+
+</div>
+    
+
+{% endblock %}

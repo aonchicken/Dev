@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+<h4>Print Web to PDF</h4>
+<h3>{{ product.device_name }}</h3>
+
+<a href="{% url 'doc_pdf' %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-eye-open"> PrePrint</span></a>
+<a href="{% url 'pdf-inline' %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-print"> Print</span></a>
+<a href="{% url 'pdf' %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-print"> newPrint</span></a>
+<a href="{% url 'mail' %}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-envelope"> mail</span></a>
+
+</div>
+<tbody>
+    {% for product in products %}
+
+    <tr>
+        <th>
+            
+            <a href="{% url 'detail' product.id %}">{{ product.id }}</a>
+           
+
+        </th>
+        <td>{{ product.device_name }}</td>
+        <td>{{ product.path_number }}</td>
+        <td>{{ product.serial_number }}</td>
+        <td>{{ product.device_type }}</td>
+        <td>{{ product.location }}</td>
+        <td>{{ product.status }}</td>
+    </tr>
+    {% endfor %}
+
+</tbody>
+
+
+{% endblock %} {% block javascript %}
+<script>
+    {% if not user.is_authenticated %}
+    $("ul.nav.navbar-nav.navbar-right").css("display", "none");
+    {% endif %}
+</script>
+
+{% endblock %}
