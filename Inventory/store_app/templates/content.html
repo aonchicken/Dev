@@ -1,0 +1,146 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <meta http-equiv="content-type" content="text/html" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+  <title>Inventory Managment</title>
+
+  <!-- Core CSS - Include with every page -->
+  <!--<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">-->
+  <link href="{% static 'css/app.css' %}" rel="stylesheet">
+
+  <style type='text/css'>
+    body {
+      font-family: 'THSarabun';
+
+      font-size: 150%;
+    }
+    
+  table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    border-collapse: collapse;
+
+  
+    
+  }
+  .tableList{
+    
+    border-top: none;
+    border-bottom: none;
+
+  }
+
+  .tableFoot{
+    border-top: none;
+   
+
+  }
+  
+
+  </style>
+
+</head>
+
+<body>
+  <!--
+    .tableList{
+    
+    border-top: none;
+    border-bottom: none;
+
+  }
+
+  .tableFoot{
+   
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+  #tdTop {
+   
+    vertical-align: top;
+}
+ -->
+
+
+
+
+
+
+
+
+
+    
+   
+    <table  width="954"  border="1" align="center">
+    {% for i in range %}
+    {% if i in nb   %}
+    <tr>
+      
+      <td id="tdTop" class="tableFoot" width="66" align="center">{{ i }}</td>
+    
+      
+      <td id="tdTop" class="tableFoot" width="140" align="center">{{key_pd}}</td>
+      <!-- <td id="tdTop" class="tableFoot" width="460"> {{detail_pd}}</td> -->
+      <td id="tdTop" class="tableFoot" width="460">
+      {% for i in detail_pd %}
+      {{i}}<br>
+      {% endfor %}
+      </td> 
+      <td id="tdTop" class="tableFoot" width="70" align="center">{{count_pd}}</td>
+      <td id="tdTop" class="tableFoot" width="184" align="center">{{serial_pd}}</td>
+      
+      
+    </tr>
+
+    {% else  %}
+    <tr>
+      
+      <td id="tdTop" class="tableList" width="66" align="center">{{ i }}</td>
+    
+      
+      <td id="tdTop" class="tableList" width="140" align="center">{{key_pd}}</td>
+      <!-- <td id="tdTop" class="tableList" width="460"> {{detail_pd}}</td> -->
+      <td id="tdTop" class="tableList" width="460">
+        {% for i in detail_pd %}
+        {{i}}<br>
+        {% endfor %}
+        </td>
+      <td id="tdTop" class="tableList" width="70" align="center">{{count_pd}}</td>
+      <td id="tdTop" class="tableList" width="184" align="center">{{serial_pd}}</td>
+      
+      
+    </tr>
+    {% endif %}
+    {% endfor %}
+    
+
+
+  
+    
+  </table>
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+

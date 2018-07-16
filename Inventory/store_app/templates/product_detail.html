@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% load staticfiles %}
+{% block page %}
+<div class="row">
+    <!--Product detail section-->
+    <div class="col-md-8">
+        <div class="thumbnail">
+            <img src="{{ MEDIA_URL }}{{ product.photo }}" alt="">
+            <div class="detail">
+                <h4 class="pull-right">{{ product.price }}</h4>
+                <h4>{{product.name}}</h4>
+                <p>{{product.detail}}</p>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <div class="detail">
+                <h4>เพิ่มสินค้าลงตะกร้าหรือซื้อ</h4>
+                <a href="#" class="btn btn-success">เพิ่มสินค้าลงตะกร้า</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

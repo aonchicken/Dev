@@ -1,0 +1,60 @@
+ {% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+<div class="container">
+    <div class="row banner">
+        <div class="col-md-12">
+            <img src="{% static 'img/banner2.png' %}" alt=""  >
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="btn-group">
+        <a href="{% url 'addnew' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Add Item</a>
+        <a href="{% url 'document' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><span class="glyphicon glyphicon-print"> Print</span></a>
+        <a href="{% url 'handson_view' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Data</a>
+        <a href="{% url 'import' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Import Table</a>
+    </div>
+
+</div>
+<br>
+
+
+
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Device Name</th>
+                <th>Path Number</th>
+                <th>Serial Number</th>
+                <th>Device Type</th>
+                <th>Location</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+
+            <tr>
+                <th>
+                    
+                    <a href="{% url 'detail' product.id %}">{{ product.id }}</a>
+                   
+
+                </th>
+                <td>{{ product.device_name }}</td>
+                <td>{{ product.path_number }}</td>
+                <td>{{ product.serial_number }}</td>
+                <td>{{ product.device_type }}</td>
+                <td>{{ product.location }}</td>
+                <td>{{ product.status }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
