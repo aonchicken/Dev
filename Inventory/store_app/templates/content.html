@@ -87,18 +87,18 @@
     {% if i in nb   %}
     <tr>
       
-      <td id="tdTop" class="tableFoot" width="66" align="center">{{ i }}</td>
+      <td id="tdTop" class="tableFoot" width="66" valign="top" align="center">{{ i }}</td>
     
       
-      <td id="tdTop" class="tableFoot" width="140" align="center">{{key_pd}}</td>
+      <td id="tdTop" class="tableFoot" width="140" valign="top" align="center">{{key_pd}}</td>
       <!-- <td id="tdTop" class="tableFoot" width="460"> {{detail_pd}}</td> -->
-      <td id="tdTop" class="tableFoot" width="460">
+      <td id="tdTop" class="tableFoot" valign="top" width="460">
       {% for i in detail_pd %}
       {{i}}<br>
       {% endfor %}
       </td> 
-      <td id="tdTop" class="tableFoot" width="70" align="center">{{count_pd}}</td>
-      <td id="tdTop" class="tableFoot" width="184" align="center">{{serial_pd}}</td>
+      <td id="tdTop" class="tableFoot" width="70" valign="top" align="center">{{count_pd}}</td>
+      <td id="tdTop" class="tableFoot" width="184" valign="top" align="center">{{serial_pd}}</td>
       
       
     </tr>
@@ -106,18 +106,18 @@
     {% else  %}
     <tr>
       
-      <td id="tdTop" class="tableList" width="66" align="center">{{ i }}</td>
+      <td id="tdTop" class="tableList" width="66" valign="top" align="center">{{ i }}</td>
     
       
-      <td id="tdTop" class="tableList" width="140" align="center">{{key_pd}}</td>
+      <td id="tdTop" class="tableList" width="140" valign="top" align="center">{{key_pd}}</td>
       <!-- <td id="tdTop" class="tableList" width="460"> {{detail_pd}}</td> -->
-      <td id="tdTop" class="tableList" width="460">
+      <td id="tdTop" class="tableList" valign="top" width="460">
         {% for i in detail_pd %}
         {{i}}<br>
         {% endfor %}
         </td>
-      <td id="tdTop" class="tableList" width="70" align="center">{{count_pd}}</td>
-      <td id="tdTop" class="tableList" width="184" align="center">{{serial_pd}}</td>
+      <td id="tdTop" class="tableList" width="70" valign="top" align="center">{{count_pd}}</td>
+      <td id="tdTop" class="tableList" width="184" valign="top" align="center">{{serial_pd}}</td>
       
       
     </tr>
